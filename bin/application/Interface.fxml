@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="380.0" minWidth="450.0" pickOnBounds="true" prefHeight="464.0" prefWidth="761.0" style="" styleClass="clientarea-background" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <AnchorPane id="" pickOnBounds="false" prefHeight="37.0" prefWidth="640.0" visible="true">
+      <children>
+            <HBox alignment="CENTER" layoutY="6.0" prefHeight="34.0" prefWidth="418.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+              <Label styleClass="logo-label" text="MHY" AnchorPane.rightAnchor="331.0" AnchorPane.topAnchor="10.0" />
+              <ImageView fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" styleClass="logo" />
+               </children>
+            </HBox>
+      </children>
+    </AnchorPane>
+    <AnchorPane id="draggableNode" maxHeight="-1.0" maxWidth="-1.0" pickOnBounds="false" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <children>
+        <BorderPane prefHeight="282.0" prefWidth="517.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+          <bottom>
+            <TextArea id="" fx:id="notificationText" opacity="1.0" prefHeight="34.0" prefWidth="624.0" wrapText="true">
+              <effect>
+                <DropShadow offsetX="2.0" offsetY="2.0" />
+              </effect>
+              <BorderPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="15.0" />
+              </BorderPane.margin>
+            </TextArea>
+          </bottom>
+          <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+              <children>
+                        <VBox layoutX="7.0" layoutY="7.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <TableView fx:id="TableG">
+                                <columns>
+                                  <TableColumn fx:id="It" minWidth="-1.0" text="Iteration" />
+                                    <TableColumn fx:id="X1t" minWidth="-1.0" text="X1" />
+                                    <TableColumn fx:id="Ot" minWidth="-1.0" text="O" />
+                                  <TableColumn fx:id="Xt" minWidth="-1.0" text="X" />
+                                    <TableColumn fx:id="Yt" prefWidth="74.0" text="Y" />
+                                    <TableColumn fx:id="Zt" prefWidth="78.0" text="Z" />
+                                    <TableColumn fx:id="Tt" prefWidth="81.0" text="T" />
+                                </columns>
+                              </TableView>
+                              <HBox>
+                                 <children>
+                                    <LineChart fx:id="lineChart" HBox.hgrow="ALWAYS">
+                                      <xAxis>
+                                        <NumberAxis side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis side="LEFT" />
+                                      </yAxis>
+                                    </LineChart>
+                            <PieChart id="PieChart" fx:id="pieChart" prefHeight="162.0" prefWidth="407.0" />
+                                 </children>
+                              </HBox>
+                              <Separator prefWidth="200.0">
+                                 <effect>
+                                    <DropShadow color="#bcabab" />
+                                 </effect>
+                              </Separator>
+                              <HBox alignment="CENTER_LEFT" prefHeight="124.0" prefWidth="478.0">
+                                 <children>
+                                    <Label text="State graph:">
+                                       <font>
+                                          <Font name="Book Antiqua Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Separator orientation="VERTICAL" prefHeight="200.0">
+                                       <effect>
+                                          <DropShadow color="#bcabab" />
+                                       </effect>
+                                    </Separator>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <Pane prefHeight="100.0" prefWidth="295.0">
+                                             <children>
+                                                <Circle fx:id="circle0" fill="#1f93ff00" layoutX="25.0" layoutY="25.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" />
+                                                <Circle fx:id="circle1" fill="#1f93ff00" layoutX="70.0" layoutY="67.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" />
+                                                <Circle fx:id="circle2" fill="#1f93ff00" layoutX="117.0" layoutY="25.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" />
+                                                <Circle fx:id="circle3" fill="#1f93ff00" layoutX="165.0" layoutY="67.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" />
+                                                <Line fx:id="link0to1" endX="-80.0" endY="20.0" layoutX="140.0" layoutY="35.0" startX="-100.0" />
+                                                <Line fx:id="link2to3" endX="-80.0" endY="20.0" layoutX="235.0" layoutY="32.0" startX="-100.0" />
+                                                <Label fx:id="s0" layoutX="40.0" layoutY="16.0" text="(0,0,0,0)" />
+                                                <Label fx:id="s1" layoutX="82.0" layoutY="78.0" text="(0,0,0,0)" />
+                                                <Label fx:id="s2" layoutX="135.0" layoutY="16.0" text="(0,0,0,0)" />
+                                                <Label fx:id="s3" layoutX="177.0" layoutY="78.0" text="(0,0,0,0)" />
+                                                <Label fx:id="l0" layoutX="22.0" layoutY="17.0" text="0" />
+                                                <Label fx:id="l1" layoutX="67.0" layoutY="58.0" text="0" />
+                                                <Label fx:id="l2" layoutX="114.0" layoutY="16.0" text="0" />
+                                                <Label fx:id="l3" layoutX="162.0" layoutY="59.0" text="0" />
+                                                <Line fx:id="link1to2" endX="-80.0" endY="-20.0" layoutX="182.0" layoutY="55.0" startX="-100.0" />
+                                                <Circle fx:id="circle4" fill="#1f93ff00" layoutX="214.0" layoutY="27.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" />
+                                                <Line fx:id="link3to4" endX="-80.0" endY="-20.0" layoutX="277.0" layoutY="53.0" startX="-100.0" />
+                                                <Label fx:id="s4" layoutX="232.0" layoutY="18.0" text="(0,0,0,0)" />
+                                                <Label fx:id="l4" layoutX="211.0" layoutY="18.0" text="0" />
+                                                <Group fx:id="link0to0">
+                                                   <children>
+                                                      <Line endX="-80.0" endY="20.0" layoutX="119.0" layoutY="-8.0" rotate="-172.6" startX="-93.0" startY="9.0" />
+                                                      <Line endX="-80.0" endY="20.0" layoutX="106.0" layoutY="-10.0" rotate="101.1" startX="-91.0" startY="11.0" />
+                                                   </children>
+                                                </Group>
+                                                <Group fx:id="link2to2" layoutX="93.0">
+                                                   <children>
+                                                      <Line endX="-80.0" endY="20.0" layoutX="119.0" layoutY="-8.0" rotate="-172.6" startX="-93.0" startY="9.0" />
+                                                      <Line endX="-80.0" endY="20.0" layoutX="106.0" layoutY="-10.0" rotate="101.1" startX="-91.0" startY="11.0" />
+                                                   </children>
+                                                </Group>
+                                                <Group fx:id="link1to1" layoutX="46.0" layoutY="43.0">
+                                                   <children>
+                                                      <Line endX="-80.0" endY="20.0" layoutX="119.0" layoutY="-8.0" rotate="-172.6" startX="-93.0" startY="9.0" />
+                                                      <Line endX="-80.0" endY="20.0" layoutX="106.0" layoutY="-10.0" rotate="101.1" startX="-91.0" startY="11.0" />
+                                                   </children>
+                                                </Group>
+                                                <Group fx:id="link4to4" layoutX="190.0" layoutY="3.0">
+                                                   <children>
+                                                      <Line endX="-80.0" endY="20.0" layoutX="119.0" layoutY="-8.0" rotate="-172.6" startX="-93.0" startY="9.0" />
+                                                      <Line endX="-80.0" endY="20.0" layoutX="106.0" layoutY="-10.0" rotate="101.1" startX="-91.0" startY="11.0" />
+                                                   </children>
+                                                </Group>
+                                                <Group fx:id="link3to3" layoutX="141.0" layoutY="43.0">
+                                                   <children>
+                                                      <Line endX="-80.0" endY="20.0" layoutX="119.0" layoutY="-8.0" rotate="-172.6" startX="-93.0" startY="9.0" />
+                                                      <Line endX="-80.0" endY="20.0" layoutX="106.0" layoutY="-10.0" rotate="101.1" startX="-91.0" startY="11.0" />
+                                                   </children>
+                                                </Group>
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+              </children>
+            </AnchorPane>
+          </center>
+          <left>
+            <Accordion prefWidth="270.0" BorderPane.alignment="CENTER">
+              <panes>
+                <TitledPane fx:id="Exemple1" animated="false" text="Exemple 1 : Account">
+                  <content>
+                              <ScrollPane hbarPolicy="NEVER">
+                                 <content>
+                                    <VBox alignment="CENTER" spacing="10.0">
+                                       <children>
+                                          <TextArea fx:id="exempleAccountText" editable="false" layoutX="4.0" layoutY="21.0" prefHeight="200.0" prefWidth="240.0" text="gfhtfhryrytrybr">
+                                             <effect>
+                                                <DropShadow color="#5e3232" />
+                                             </effect>
+                                             <font>
+                                                <Font name="Book Antiqua" size="12.0" />
+                                             </font>
+                                          </TextArea>
+                                          <TextArea fx:id="exempleAccountText1" editable="false" layoutX="10.0" layoutY="10.0" prefHeight="260.0" prefWidth="245.0" text="m">
+                                             <effect>
+                                                <DropShadow color="#402828" />
+                                             </effect>
+                                             <font>
+                                                <Font name="Book Antiqua" size="12.0" />
+                                             </font>
+                                          </TextArea>
+                                          <Button fx:id="start" mnemonicParsing="false" onAction="#addData" text="start" />
+                                       </children>
+                                       <padding>
+                                          <Insets left="5.0" top="8.0" />
+                                       </padding>
+                                    </VBox>
+                                 </content>
+                              </ScrollPane>
+                  </content>
+                </TitledPane>
+                <TitledPane animated="false" text="Exemple 2 : &quot;&quot;">
+                  <content>
+                    <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                </TitledPane>
+              </panes>
+            </Accordion>
+          </left>
+          <padding>
+            <Insets />
+          </padding>
+        </BorderPane>
+      </children>
+    </AnchorPane>
+  </children>
+  <stylesheets>
+    <URL value="@demoapp.css" />
+  </stylesheets>
+</VBox>
